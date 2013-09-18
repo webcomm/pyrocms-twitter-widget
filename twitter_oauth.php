@@ -102,7 +102,7 @@ class Widget_Twitter_oauth extends Widgets
 				);
 			}
 
-			$this->pyrocache->write($tweets, $cache_key, $this->settings->twitter_cache);
+			$this->pyrocache->write($tweets, $cache_key, 300);
 		}
 
 		$patterns = array(
