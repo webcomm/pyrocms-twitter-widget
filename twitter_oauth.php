@@ -150,7 +150,10 @@ class Widget_Twitter_oauth extends Widgets
 		unset($options['consumer_secret']);
 		$access_token_secret = $options['access_token_secret'];
 		unset($options['access_token_secret']);
-
+		
+		// Unset widget options as they are not needed here and causing a php warning
+		unset($options['widget']);
+		
 		// Encode and merge perams
 		$options  = array_map('rawurlencode', $options);
 		$params = array_merge($oauth, $options);
